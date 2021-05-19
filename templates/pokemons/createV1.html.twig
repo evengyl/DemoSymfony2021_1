@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PokemonsController!{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Hello PokemonsController CREATE!</h1>
+    <form method="post">
+        <label for="name">Nom du pokemon</label>
+        <input id="name" type="text" name="Name"><br>
+
+        <label for="type">Type du pokemon</label>
+        <input id="type" type="text" name="Type"><br>
+
+        <label for="type">Numéro pokedex</label>
+        <input id="type" type="text" name="numeroPokedex"><br>
+
+        <input value="{{csrf_token('PokemonCreate')}}" type="hidden" name="_token"><br>
+
+        <input type="submit">
+    </form>
+   
+</div>
+
+
+{% endblock %}
+
+{% block footer %}Créer par evengyl Bstorm 2021 - page pokemons{% endblock %}

@@ -15,8 +15,8 @@ if ($_SERVER['APP_DEBUG']) {
     Debug::enable();
 }
 
-$kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
-$request = Request::createFromGlobals();
-$response = $kernel->handle($request);
-$response->send();
-$kernel->terminate($request, $response);
+$kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']); //crée l'app symfony
+$request = Request::createFromGlobals(); 
+$response = $kernel->handle($request); //traite la requète
+$response->send(); //renvoi la requète traitée au nav
+$kernel->terminate($request, $response); //termine la requete

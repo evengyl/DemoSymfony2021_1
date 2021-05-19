@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+<div>
+    <h1>Hello Pokemons details!</h1>
+    Nom : {{ pkn.name }}<br>
+    Type : {{ pkn.type }}<br>
+    ID doctrine : {{ pkn.id }}<br>
+    <img src="/images/{{ pkn.numeroPokedex }}.jpg"/><br>
+</div>
+
+
+{% endblock %}
+

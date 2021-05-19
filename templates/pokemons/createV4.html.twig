@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PokemonsController!{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Hello PokemonsController CREATE!</h1>
+    {% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
+
+    {{ form_start(form) }}  
+        {{ form_widget(form) }}
+        <input type="submit" value="Créer un pokemon">
+    {{ form_end(form) }}
+   
+</div>
+
+
+{% endblock %}
+
+{% block footer %}Créer par evengyl Bstorm 2021 - page pokemons{% endblock %}

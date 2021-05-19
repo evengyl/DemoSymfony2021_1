@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PokemonsController!{% endblock %}
+
+{% block body %}
+
+<div>
+    <h1>Hello PokemonsController!</h1>
+    {{ allPkns | length }} Pokemons
+    {% if allPkns|length > 0 %}
+        <ul class="list-group">
+            {% for pkn in allPkns %}
+                <li class="list-group-item">
+                    {{pkn.name}} - Type {{pkn.type}}<br>
+                    <a class="btn btn-primary" href="{{ url('pokemon_details_v1', {id : pkn.id}) }}">Détail V1</a>&nbsp;
+                    <a class="btn btn-primary" href="{{ url('pokemon_details_v2', {id : pkn.id}) }}">Détail V2</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Il n'y a pas de pokemon dans la base de données</p>
+    {% endif %}
+
+    <ul>
+        {% for pkn in allPkns %}
+            <li>{{pkn.name}} - Type {{pkn.type}}</li>
+        {% else %}
+            <p>Il n'y a pas de pokemon dans la base de données</p>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}Créer par evengyl Bstorm 2021 - page pokemons{% endblock %}
